@@ -2,9 +2,62 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Lorem</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="/fonts/cormorant-garamond-500.woff" as="font" type="font/woff" crossorigin>
+  <style>
+    @font-face {
+      font-family: "Cormorant Garamond";
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url("/fonts/cormorant-garamond-500.woff") format("woff");
+    }
+    :root {
+      --bg: #f5f2ec;
+      --fg: #111;
+      --muted: #6b6860;
+      --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0e0e0e; --fg: #f2efe8; --muted: #8d8a83; }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); }
+    body { background: var(--bg); color: var(--fg); font-family: var(--serif); -webkit-font-smoothing: antialiased; }
+    main {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.25rem;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(4.5rem, 22vw, 11rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 2rem; }
+    a {
+      color: var(--fg);
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 2px;
+      transition: border-color 0.2s ease;
+    }
+    a:hover, a:focus-visible { border-bottom-color: var(--fg); outline: none; }
+    p a { color: var(--muted); font-size: 1.15rem; }
+    p a:hover, p a:focus-visible { color: var(--fg); }
+  </style>
 </head>
 <body>
   <main>
