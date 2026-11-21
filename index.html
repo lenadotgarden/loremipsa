@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Lorem</title>
+  <link rel="preload" href="/fonts/jost-400.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="/fonts/cormorant-garamond-500.woff" as="font" type="font/woff" crossorigin>
   <style>
     @font-face {
@@ -13,10 +14,18 @@
       font-display: swap;
       src: url("/fonts/cormorant-garamond-500.woff") format("woff");
     }
+    @font-face {
+      font-family: "Jost";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url("/fonts/jost-400.woff") format("woff");
+    }
     :root {
       --bg: #f5f2ec;
       --fg: #111;
       --muted: #6b6860;
+      --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
       --serif: "Cormorant Garamond", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
     }
     @media (prefers-color-scheme: dark) {
@@ -43,6 +52,16 @@
       letter-spacing: 0.01em;
       line-height: 1;
     }
+    h1 span {
+      display: block;
+      margin-top: 0.6rem;
+      font-family: var(--sans);
+      font-size: clamp(1rem, 4.6vw, 2.2rem);
+      font-weight: 400;
+      letter-spacing: 0.5em;
+      margin-right: -0.5em;
+      color: var(--muted);
+    }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 2rem; }
     a {
       color: var(--fg);
@@ -61,7 +80,7 @@
 </head>
 <body>
   <main>
-    <h1>Lorem</h1>
+    <h1>Lorem<span>Ipsa</span></h1>
     <nav>
       <a href="https://www.youtube.com/@loremipsa" rel="noopener">YouTube</a>
       <a href="https://www.instagram.com/loremipsa/" rel="noopener">Instagram</a>
