@@ -1,0 +1,52 @@
+:root {
+  --bg: #f5f2ec;
+  --fg: #111;
+  --muted: #6b6860;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #0e0e0e; --fg: #f2efe8; --muted: #8d8a83; }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; }
+body {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: clamp(3.5rem, 18vw, 9rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-right: -0.12em;
+  line-height: 1;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 2rem;
+}
+a {
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+a:hover, a:focus-visible { border-bottom-color: var(--fg); outline: none; }
+p a { color: var(--muted); font-size: 0.95rem; }
+p a:hover, p a:focus-visible { color: var(--fg); }
